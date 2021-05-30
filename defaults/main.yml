@@ -1,0 +1,5 @@
+---
+# create_rke_cluster_yml/defaults/main.yml
+
+cluster_name: 'rke-cluster'
+path_to_cluster_yml: 'cluster.yml'
