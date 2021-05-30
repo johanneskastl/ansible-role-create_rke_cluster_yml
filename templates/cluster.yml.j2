@@ -1,0 +1,24 @@
+nodes:
+{% for host in groups[rke_controlplane_nodes_group] %}
+    - address: {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+      user: {{ hostvars[host]['ansible_user'] }}
+{% if ssh_key_path is defined %}
+      ssh_key_path: {{ ssh_key_path }}
+{% endif %}
+      role:
+        - controlplane
+        - etcd
+        - worker
+{% endfor %}
+{% if rke_worker_nodes_group is defined %}
+{% for host in groups[rke_worker_nodes_group] %}
+    - address: {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+      user: {{ hostvars[host]['ansible_user'] }}
+{% if ssh_key_path is defined %}
+      ssh_key_path: {{ ssh_key_path }}
+{% endif %}
+      role:
+        - worker
+{% endfor %}
+{% endif %}
+cluster_name: {{ cluster_name }}
