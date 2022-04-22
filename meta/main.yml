@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'create_rke_cluster_yml'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Create a cluster.yml for RKE based on the Ansible inventory'
   company: 'B1 Systems GmbH'
