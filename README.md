@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-create_rke_cluster_yml/workflows/Ansible%20Lint/badge.svg)
+
 create_rke_cluster_yml
 =========
 
