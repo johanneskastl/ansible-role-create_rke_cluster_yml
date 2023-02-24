@@ -2,7 +2,7 @@
 # create_rke_cluster_yml/tasks/main.yml
 
 - name: 'Create a cluster.yml'
-  template:
+  ansible.builtin.template:
     src: 'cluster.yml.j2'
     dest: "{{ path_to_cluster_yml }}"
     owner: "{{ cluster_yml_owner | default(omit) }}"
