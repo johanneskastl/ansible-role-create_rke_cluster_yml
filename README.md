@@ -46,8 +46,8 @@ Or you can run targetting all nodes, but only run the role once on localhost:
 ```
 - name: 'Prepare the cluster.yml on the Ansible control host'
   hosts: 'all'
-  gather_facts: 'yes'
-  become: 'false'
+  gather_facts: true
+  become: false
 
   roles:
     - role: 'create_rke_cluster_yml'
