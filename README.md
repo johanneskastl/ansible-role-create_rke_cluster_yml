@@ -51,11 +51,10 @@ Or you can run targetting all nodes, but only run the role once on localhost:
 
   roles:
     - role: 'create_rke_cluster_yml'
-      vars:
-        path_to_cluster_yml: '../cluster.yml'
-        ssh_key_path: 'ssh_key_rke'
-        rke_controlplane_nodes_group: 'rkeservers'
-        rke_worker_nodes_group: 'rkeworkers'
+      path_to_cluster_yml: '../cluster.yml'
+      ssh_key_path: 'ssh_key_rke'
+      rke_controlplane_nodes_group: 'rkeservers'
+      rke_worker_nodes_group: 'rkeworkers'
       delegate_to: 'localhost'
       run_once: 'true'
 ```
